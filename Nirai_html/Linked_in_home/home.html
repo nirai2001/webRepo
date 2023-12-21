@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      background-color: 0000;
+      flex-wrap: nowrap;
+      min-width: 100vh;
+      flex: auto;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-around;
+      color: 0000;
+      position:relative;
+    }
+
+    .left-side {
+      width: 100%;
+      padding: 40px;
+      box-sizing: border-box;
+      flex-wrap: nowrap;
+    }
+
+    .right-side {
+      width: 50%;
+      background: url('sign_in_1.png') center/cover no-repeat;
+    
+    }
+
+    .sign-in-box {
+      background-color: #0000;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      margin-top: 100px;
+      color: #413e3d;
+      font-size: 56px;
+      font-weight: 300;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }   
+
+    h2 {
+      margin-top: 1000px;
+      color: #b24020;
+      font-size: 56px;
+      font-weight: 300;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }   
+    label {
+      color: #000000bf;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      display: block;
+      font-size:14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border-radius: 4px;
+      border-width: 1px;
+      border-style: solid;
+      padding-left: 8px;
+      padding-right: 8px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      flex-wrap: nowrap;
+      max-width: 380px;
+      max-height: 50px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #0a66c2;
+      color: #fff;
+      border: none;
+      border-radius: 24px;
+      cursor: pointer;
+      font-family: inherit;
+      max-width: 380px;
+      
+    }
+    .signbutton {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #0a66c2;
+      color: #fff;
+      border: none;
+      border-radius: 24px;
+      cursor: pointer;
+      font-family: inherit;
+      max-width: 380px;
+      
+    }
+
+    /* button:hover {
+      background-color: #2980b9;
+    } */
+
+    .forgot-password {
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: 24px;
+      width: fit-content;
+      color:#0a66c2;
+      font-weight: 600;
+    }
+    .main img {
+      overflow-clip-margin: content-box;
+      overflow: clip;
+      flex-shrink: 1;
+      height: 650px;
+      width: 550px;
+      position: relative;
+      display:flex;
+      top:170px;
+    }
+    .social-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 380px;
+    }
+
+    .google-button {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 30px;
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 500;
+      background-color: #f9f7f7; 
+      color: #3a3838e6;
+      border: 1.5px solid #000000e6;
+      border-color: #000000e6;
+      border-radius: 20px solid #000000e6;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .linkedin-button {
+      padding: 10px;
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      margin-top: 10px;
+      background-color: #f9f7f7; 
+      color: #3a3838e6;
+      border: 1.5px solid #000000e6;
+      border-color: #000000e6;
+      border-radius: 20px solid #000000e6;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .google-button:hover,
+    .linkedin-button:hover {
+      border-color: #5d676e;
+    }
+
+    .google-icon {
+      height: 20px;
+      width: 20px;
+      margin-right: 0px;
+      position: absolute;
+      left: 85px;
+      bottom:10px;
+    }
+
+    .google-icon img {
+      width:20px;
+      height: auto;
+    }
+
+    .logo-container {
+      position:absolute;
+      top: -20px;
+      bottom:0px;
+      left: 35px;
+      margin: 10px; 
+    }
+
+    .logo-container img {
+      width: 140px; 
+      height: auto; 
+    }
+
+    .sign-in-button:hover {
+      border-color:#000000e6;
+       color:#000000e6;
+    }
+
+    .sign-in-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 10px;
+      padding: 15px 25px;
+      background-color: hwb(210 96% 3%); 
+      color: #0a66c2; 
+      cursor: pointer;
+      border-radius: 24px;
+      border: 1px solid #0a66c2;
+      border-color:#0a66c2;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 500;
+    }
+    .joinnow{
+      margin: right 40px;
+    }
+    .join-button
+    {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 10px; 
+      padding: 15px 25px; 
+      color:#050505; 
+      cursor: pointer;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 500;
+    }
+    .sign-in-button:hover {
+      border-color:#050505; 
+      color:#050505;
+    }
+    .toolbar {
+     position: absolute;
+     top: -10px;
+     right: 0;
+     margin: 10px;
+     display: flex;
+     align-items: center;
+     margin-right: 100px;
+    }
+
+   .icon {
+     margin-right: 25px;
+   }
+   .iconget img{
+     margin-right: 120px;
+     width: 100px;
+     height: 80px;
+     border-radius: 50%;
+    }
+    .icon img {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+    }
+    
+    .line{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 30;
+    }
+
+    .agree{
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 20;
+      padding: 1px;
+      font-size: smaller;
+    }
+    .p1{
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 20;
+      padding: 1px;
+      font-size:larger;
+    }
+    .button-group {
+      position: absolute;
+      top: 920px;
+      right: 0;
+      margin: 10px; 
+      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); 
+      grid-gap: 10px;
+      z-index: 1000;
+      color:#5d676e ;
+    }
+    .eca
+    {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color:#fff;
+      color:#050505;
+      border: 1px solid #050505;
+      border-radius: 24px;
+      cursor: pointer;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      max-width: 380px;
+      font-weight: 600;
+    }
+    .ecaspl
+    {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color:#fff;
+      color:#0a66c2;
+      border: 1px solid #0a66c2;
+      border-radius: 24px;
+      cursor: pointer;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      max-width: 380px;
+      font-weight: 600;
+    }
+    /* .ecasspl
+    {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color:#fff;
+      color:#0a66c2;
+      border: 1px solid #0a66c2;
+      border-radius: 24px;
+      cursor: pointer;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      max-width: 380px;
+      font-weight: 600;
+    } */
+    .button-group-1 {
+      position: absolute;
+      top: 1350px;
+      right: 0;
+      margin: 10px; 
+      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); 
+      grid-gap: 10px;
+      z-index: 1000;
+      color:#5d676e ;
+    }
+    .button-group-2 {
+      position: absolute;
+      top: 1080px;
+      right: 0;
+      margin: 10px; 
+      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); 
+      grid-gap: 10px;
+      z-index: 1000;
+      color:#5d676e ;
+    }
+    .button-group-2 h2{
+      margin-top: 1050px;
+      margin-right: -100px;
+      margin-left: 30px;
+      color: #413e3d;
+      font-size: 56px;
+      font-weight: 300;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }   
+    .button-group-2 p{
+      margin-top: 1200px;
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 20;
+      padding: 1px;
+      font-size:larger;
+      margin-left: -370px;
+    }
+    .middle {
+      width: 92%;
+      padding: 20px;
+      position:absolute;
+      padding-top: 60px;
+      padding-right: 5px;
+      top:1600px;
+      background-color: #f1ece5;
+      height:375px;
+      box-sizing: calc(60%);
+      
+    }
+    .colored-div p {
+      color: #b24020;
+      font-size: 56px;
+      font-weight: 350;
+      text-align: left;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      align-items: center; 
+    }
+    .middle button {
+            background-color: #ffffff;
+            color:#0a66c2;
+            border: 1px solid #0a66c2;
+            padding: 10px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 600;
+            margin-left: auto;
+            cursor: pointer;
+            text-align: center;
+            align-self: start;
+            display: grid;
+            max-width: 100px;
+            margin-top: -180px;
+            margin-right: 350px;
+     }
+     .middle1
+     {
+      width: 92%;
+      padding: 20px;
+      position:absolute;
+      padding-top: 60px;
+      padding-right: 5px;
+      top:2400px;
+      background-color: #f0efed;
+      height:600px;
+      box-sizing: calc(60%);
+     }
+     .middle1 img {
+            margin-top: 70px;
+            max-width: 450px; 
+            margin-left: 600px; 
+        }
+     .middle1 h2{
+        margin-top: -365px;
+        margin-right: -100px;
+        margin-left: 30px;
+        color: #b24020;
+        font-size: 40px;
+        font-weight: 450;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+      }
+      .middle1 p{
+        color: #050505;
+        font-size: 30px;
+        font-weight: 150;
+        text-align: left;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        align-items: center;
+        margin-left: 30px;
+      }
+      .connect img{
+            margin-top: 270px;
+            max-width: 1100px; 
+            margin-left: -10px;
+      }
+      .connect button{
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        background-color:#fff;
+        color:#050505;
+        border: 1px solid #050505;
+        border-radius: 24px;
+        cursor: pointer;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        max-width: 280px;
+        font-weight: 600;
+        margin-left: 20px;
+      }
+      .professional img{
+            max-width: 1200px;
+            margin-right: -40px;
+      }
+
+      .footer img{
+            margin-top: 110px;
+            max-width: 1150px; 
+            margin-left: -10px;
+      }
+      
+      .final img{
+            margin-top: 10px;
+            max-width: 1150px; 
+            margin-left: -10px;
+      }
+      .middle2
+      {
+        width: 50%;
+        padding: 20px;
+        position:absolute;
+        padding-top: 70px;
+        padding-right: 5px;
+        top:1550px;
+        background-color: #f0efed;
+        height:700px;
+        box-sizing: calc(60%);
+      }
+      .middle2 h2{
+        margin-top: 100px;
+        margin-left: 5px;
+      }
+      .middle2 p{
+        margin-top: -10px;
+        font-size:40px;
+        margin-left: 5px;
+      }
+      .middle2 button{
+        border-radius: 0px;
+        margin-top: 20px;
+        border-right: 30px;
+        text-align: left;
+        background-color:#d1ccc1;
+        font-size: 20px;
+        color:#050505;
+        padding:30px;
+        padding-left: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      .middle2 button:hover
+      {
+        background-color:#b5b0a4;
+      }
+      .ul1
+      {
+        margin-top: 20px;
+        left:100px;
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-container">
+        <img src="linked_logo.png" alt="Your Logo">
+    </div>
+    <div class="sign-in-button"><a>Sign in </a>  </div>
+    <div class="toolbar">
+      <div class="joinnow">
+        <div class="join-button"><a>Join now </a> </div>
+      </div>
+      <div class="icon">
+        <a href="#">
+         <img src="articles.png" alt="Icon 5">
+        </a>
+      </div>
+      <div class="icon">
+        <a href="#">
+          <img src="people.png" alt="Icon 2">
+        </a>
+      </div>
+      <div class="icon">
+        <a href="#">
+          <img src="learning.png" alt="Icon 4">
+        </a>
+      </div>
+      <div class="icon">
+        <a href="#">
+          <img src="job.png" alt="Icon 3">
+        </a>
+      </div>
+      <div class="iconget">
+        <a href="#">
+          <img src="get_app.png" alt="Icon 1">
+        </a>
+      </div>
+    </div>
+  
+    <div class="left-side">
+        <h2>Welcome to your professional community</h2>
+        <form action="#">
+          <label for="username">Email or phone</label>
+          <input type="text" id="username" name="username" required>
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+          <p class="forgot-password"><a>Forgot Password?</a></p>
+          <button class="signbutton">Sign in</button>
+          <div class="line">
+            <p>__________________________or____________________________</p>
+          </div>
+          <div class="agree">
+            <p>By clicking Continue, you agree to LinkedIn’s User Agreement,Privacy<br> Policy, and Cookie Policy.</p>
+          </div>
+          <div class="social-buttons">
+            <button class="google-button"><img src="gmail_logo.jpg" alt="Google Icon" class="google-icon">Continue with Google</button>
+            <button class="linkedin-button">New to LinkedIn? Join now</button>
+          </div>
+        </form>
+        <br>
+        <div>
+          <h1>Explore <br> collaborative <br> articles</h1>
+          <p1 class="p1">We’re unlocking community knowledge in a new <br>way. 
+          Experts add insights directly into each <br> article, started with the help of AI.</p1>
+          <div class="button-group">
+            <button class="eca">Marketing</button>
+            <button class="eca">Public Administration</button>
+            <button class="eca">Healthcare</button>
+            <button class="eca">Engineering</button>
+            <button class="eca">IT Services</button>
+            <button class="eca">Sustainability</button>
+            <button class="eca">Business Administration</button>
+            <button class="eca">Telecommunications</button>
+            <button class="eca">HR Management</button>
+            <button class="ecaspl">Show all</button>
+          </div>
+        </div>
+        <div>
+          <h1>Find the right job or <br> internship for you</h1>
+          <div  class="button-group-1">
+            <button class="eca">Engineering</button>
+            <button class="eca">Business Development</button>
+            <button class="eca">Finance</button>
+            <button class="eca">Administrative Assistant</button>
+            <button class="eca">Retail Associate</button>
+            <button class="eca">Customer Service</button>
+            <button class="eca">Operations</button>
+            <button class="eca">Information Technology</button>
+            <button class="eca">Marketing</button>
+            <button class="ecaspl">Show all ></button>
+          </div>
+        </div>
+        <div class = "middle">
+          <div class="colored-div">
+            <p>Post your job <br> for millions of people to <br> see</p>
+            <button>Post a Job</button>
+          </div>
+        </div>
+      </div>
+        <div class="main"><img src="sign_in_1.png">
+    </div>
+    <div>
+      <div  class="button-group-2">
+        <h2>Discover the best software tools</h2>
+        <p>Connect with buyers who have first-hand <br> experience to find the best products for you.</p>
+        <div class="button-group-2">
+          <button class="eca">E-commerce platforms</button>
+          <button class="eca">CRM Software</button>
+          <button class="eca">HR Management systems</button>
+          <button class="eca">Recruiting software</button>
+          <button class="eca">HelpDesk software</button>
+          <button class="eca">Social networking software</button>
+          <button class="eca">Desktop Publishing software</button>
+          <button class="ecaspl">Show all ></button>
+        </div>
+      </div>
+    </div>
+    <div class = "middle1">
+      <img src="profile.png" alt="Your Image">
+      <h2>Let the right people know <br> you’re open to work</h2>
+      <p>With the Open To Work feature, you can <br>
+         privately tell recruiters or publicly share<br>
+        with the LinkedIn community that you are <br>looking for new job opportunities.</p>
+      <div class="connect">
+          <img src="connect.png">
+          <Button>Find people you know</Button>
+          <!-- /* <label for="cars">Choose a car:</label>
+          <select name="cars" id="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select> */ -->
+      </div>
+      <div class="professional">
+        <img src="professional.jpg">
+        <div class="middle2">
+          <h2>Who is LinkedIn for?</h2>
+          <p>Anyone looking to navigate <br> their professional life.</p>
+          <button>Find a coworker or classmate</button>
+          <br>
+          <button>Find a new job</button>
+          <br>
+          <button>Find a course or training</button>
+        </div>
+      </div>
+      <div class="footer">
+        <img src="footer.png">
+      </div>
+      <div class="final">
+        <img src="final.png">
+      </div>
+      <div class="footer1">
+        <!-- <ul>
+          <li><a>General</a></li>
+          <ul>
+            <li><a>
+              Sign Up
+            </a></li>
+            <li><a>
+              Help Center
+            </a></li>
+            <li><a>
+              About
+            </a></li>
+            <li><a>
+              Press
+            </a></li>
+            <li><a>
+              Blog
+            </a></li>
+            <li><a>
+              Careers
+            </a></li>
+            <li><a>
+              Developers
+            </a></li>
+          </ul>
+        </ul>
+        <ul class="ul1">
+          <li><a>Browse LinkedIn</a></li>
+          <li><a>
+            Learning
+          </a></li>
+          <li><a>
+            Jobs
+          </a></li>
+          <li><a>
+            Salary
+          </a></li>
+          <li><a>
+            Mobile
+          </a></li>
+          <li><a>
+            Services
+          </a></li>
+          <li><a>
+            Products
+          </a></li>
+        </ul>
+        <ul>
+            <li><a>Browse LinkedIn</a></li>
+            <li><a>Business Solutions</a></li>
+            <li><a>Directories</a></li>
+        </ul> -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
